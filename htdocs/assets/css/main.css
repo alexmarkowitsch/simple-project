@@ -1,4 +1,10 @@
- /*
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+ 
+/*
 BASE (MOBILE) SIZE
 These are the mobile styles. It's what people see on their phones.
 Remember, keep it light: Speed is Important.
@@ -7,6 +13,18 @@ Remember, keep it light: Speed is Important.
 :root{
     --sidebar-width: calc(100% / 4);
     --content-width: calc(100% - var(--sidebar-width));
+
+    --font-sidebar: 'Noto Sans', sans-serif;
+
+    --background-content: #FFFFFF;
+    --background-sidebar: #2B2D42;
+    
+    --color-yellow: #F8F32B;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-primary: #2B2D42;
+    --color-secondary: #8D99AE;
+    
 }
 
 /*
@@ -37,20 +55,35 @@ you can add resource intensive styles.
     }
 
     .container{
-        width: 100%;
-        height: 100%;
         display: flex;
-        flex-wrap: wrap;
+        align-items: stretch;
     }
     .sidebar{
+        position: relative;
+        display: flex;
         flex: 0 0 auto;
+        flex-direction: column;
         width: var(--sidebar-width);
 
-        background-color: coral;
+        background-image: url('/assets/images/jena-goega.jpg');
+        background-size: cover;
+        background-color: #444;
+        background-blend-mode: multiply;
+
+        color: var(--color-white);
+        text-transform: uppercase;
+        font-family: var(--font-sidebar);
     }
+
     .sidebar-header{
         text-align: center;
-        padding: 16px;
+        padding: 32px 16px 16px 16px;
+    }
+    .sidebar-header h2{ margin-bottom: 0;}
+    .sidebar-header h3{
+        font-size: medium;
+        font-weight: 100;
+        margin-top: 8px;
     }
     .sidebar-profile-image{
         background-image: url('/assets/images/profile-picture.jpg');
@@ -62,7 +95,7 @@ you can add resource intensive styles.
         height: 160px;
         border-radius: 128px;
 
-        margin: 0 auto;
+        margin: 16px auto;
     }
 
     .sidebar-menu{
@@ -77,25 +110,105 @@ you can add resource intensive styles.
     .sidebar-menu ul li{
         cursor: pointer;
         padding: 8px;
+        color: #CCCCCC;
     }
 
     .sidebar-menu ul li:hover{
-        background-color: red;
+        color: #FFFFFF;
     }
 
     .sidebar-footer{}
+
+    .social-media-buttons a{
+        color: var(--color-secondary);
+    }
+    .social-media-buttons a:hover{
+        color: var(--color-white);
+    }
+
+    .social-media-buttons ul {
+        list-style: none;
+    }
+    .social-media-buttons{
+        font-size: x-large;
+    }
+
     .content{
+        display: flex;
+        flex-direction: column;
         flex: 0 0 auto;
         width: var(--content-width);
+        padding: 32px;
 
-        background-color: blueviolet;
+        font-family: var(--font-sidebar);
+        background-color: var(--background-content);
+    }
+    .content h1{
+        text-transform: uppercase;
     }
     .portfolio{
 
     }
     .skillset{}
-    .projects{}
+
     .contact-me{}
+    .contact-me-form{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-me-form button{
+        background-color: var(--color-primary);
+        color: #CCCCCC;
+        border: 0;
+        padding: 12px;
+    }
+
+    .contact-me-form button:hover{
+        color: var(--color-white);
+        cursor: pointer;
+    }
+
+    .input-group{
+        border: 1px solid #ccc;
+        position: relative;
+        margin: 8px 0;
+    }
+    .input-group input, .input-group textarea{
+        border: none;
+        outline: 0;
+        width: 100%;
+        font-size: 16px;
+        padding: 16px 10px 10px;
+    }
+    .input-group label{
+        font-size: 16px;
+        position: absolute;
+        transform: translate(0, 16px) scale(1);
+        transform-origin: top left;
+        transition: all .1s ease-in-out;
+        margin-left: 10px;
+    }
+    .input-group.active label{
+        transform: translate(0, 4px) scale(.75);
+    }
+    .input-group textarea{
+        resize: none;
+    }
+
+    .scrollup{
+        position: fixed;
+        right: 10%;
+        bottom: 1%;
+    }
+    .scrollup button{
+        background-color: var(--color-primary);
+        color: white;
+        border: 0;
+        padding: 8px 16px;
+        cursor: pointer;
+    }
 }
 
 /*

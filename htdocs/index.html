@@ -21,23 +21,64 @@
                     <ul>
                         <li>Portfolio</li>
                         <li>Skillset</li>
-                        <li>Projects</li>
                         <li>Contact Me</li>
                     </ul>
                 </div>
                 <div class="sidebar-footer">
                     <ul class="social-media-buttons">
+                        <a href="">
+                            <li class="fas fa-envelope"></li>
+                        </a>
+                        <a href="">
+                            <li class="fab fa-xing"></li>
+                        </a>
+                        <a href="">
+                            <li class="fab fa-linkedin"></li>
+                        </a>
+                        <a href="">
+                            <li class="fab fa-github"></li>
+                        </a>
+                        <a href="">
+                            <li class="fab fa-twitter"></li>
+                        </a>
                     </ul>
                 </div>
             </div>
             <div class="content">
                 <div id="portfolio" class="portfolio">
                     <h1>Portfolio</h1>
+                    <p>See my works below</p>
                 </div>
-                <div id="skillset" class="skillset"></div>
-                <div id="projects" class="projects"></div>
-                <div id="contact-me" class="contact-me"></div>
+                <div id="skillset" class="skillset">
+                    <h1>Skillset</h1>
+                    <p>An overview about my skills and levels</p>
+                </div>
+                <div id="contact-me" class="contact-me">
+                    <h1>Contact Me</h1>
+                    <p>Either use the form or contact me via the linked social media accounts</p>
+                    <form class="contact-me-form" method="POST" action="">
+                        <div class="input-group">
+                            <label for="contact-name">Name</label>
+                            <input id="contact-name" type="text" data-placeholder="Ihr Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="contact-email">E-Mail</label>
+                            <input id="contact-email" type="email" data-placeholder="Ihre E-Mail-Adresse" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="contact-text">Text</label>
+                            <textarea data-placeholder="Ihre Nachricht" required></textarea>
+                        </div>
+                        <button type="submit">Absenden</button>
+                    </form>
+                </div>
             </div>
+        </div>
+
+        <div class="scrollup">
+            <button>
+                <i class="fas fa-arrow-up"></i>
+            </button>
         </div>
 
         <script src="/assets/js/main.js"></script>
